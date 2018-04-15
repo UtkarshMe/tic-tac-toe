@@ -30,13 +30,14 @@ while True:
 
     # player's turn
     if turn == 1:
-        player1.take_turn(game_state)
+        pos = player1.take_turn()
+        player2.update_state(pos)
         turn = 2;
         pass
 
     # opponent's turn
     else:
-        player2.take_turn(game_state)
+        pos = player2.take_turn()
+        player1.update_state(pos)
         turn = 1;
         pass
-

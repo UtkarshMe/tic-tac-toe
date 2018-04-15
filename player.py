@@ -7,20 +7,10 @@ class Player():
 
     def __init__(self, mark):
         self.mark = mark
-        self.kb = KnowledgeBase();
-        pass
+        self.kb = knowledge.KnowledgeBase();
 
-    def get_max(self, current_state):
-        curr = util.deserialize(current_state, self.mark)
-        try:
-            opts = self.kb[curr]
-        except Exception as e:
-            return random.randint(0, 2), random.randint(0, 2)
-        return opts[0], opts[1]
+    def update_state(self, position):
+        self.kb.percept(position)
 
-    def take_turn(self, state):
-        while True:
-            x, y = self.get_max(state);
-            if state[x][y] == 0:
-                state[x][y] = self.mark
-                break
+    def take_turn(self):
+        return self.kb.actuate()
