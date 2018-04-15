@@ -19,6 +19,18 @@ def check_win(state):
             if state[i][j] == 0:
                 flag = False
                 break
-
     if flag:
         return 'no one'
+
+
+def deserialize(state, mark):
+    result = ""
+    for i in range(0, 3):
+        for j in range(0, 3):
+            if state[i][j] == mark:
+                result += '1';
+            elif state[i][j] == 0:
+                result += '0';
+            else:
+                result += '2';
+    return result

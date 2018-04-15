@@ -3,6 +3,7 @@
 
 import player
 import util
+import human
 
 player1 = player.Player(1)
 player2 = player.Player(2)
