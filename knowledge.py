@@ -53,7 +53,7 @@ class KnowledgeBase():
         gen_win(self.rules, 2, 5, 8)
 
         gen_win(self.rules, 0, 4, 8)
-        gen_win(self.rules, 3, 4, 6)
+        gen_win(self.rules, 2, 4, 6)
 
 
     def percept(self, position):
