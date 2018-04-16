@@ -6,7 +6,7 @@ import util
 import human
 
 player1 = player.Player(1)
-player2 = player.Player(2)
+player2 = human.Player(2)
 turn = 1
 game_state = [0, 0, 0, 0, 0, 0, 0, 0, 0 ]
 
@@ -16,6 +16,7 @@ while True:
     print(game_state[0], game_state[1], game_state[2])
     print(game_state[3], game_state[4], game_state[5])
     print(game_state[6], game_state[7], game_state[8])
+    print()
 
     # check win
     win = util.check_win(game_state)

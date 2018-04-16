@@ -75,14 +75,12 @@ class KnowledgeBase():
             return -1
 
         list_of_empty = self.atoms['E']
-        print(list_of_empty)
 
         # select winning move
         wins = []
         for index in range(0, self.atoms_size):
             if self.atoms['W'][index] == 1:
                 wins.append(index)
-        print('wins: ' + str(wins))
         if len(wins) != 0:
             self.atoms['X'][wins[0]] = 1
             return wins[0]
@@ -92,7 +90,6 @@ class KnowledgeBase():
         for index in range(0, self.atoms_size):
             if self.atoms['L'][index] == 1:
                 loses.append(index)
-        print('loses: ' + str(loses))
         if len(loses) != 0:
             self.atoms['X'][loses[0]] = 1
             return loses[0]

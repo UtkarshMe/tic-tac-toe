@@ -6,11 +6,12 @@ class Player():
     def __init__(self, mark):
         self.mark = mark
 
-    def take_turn(self, state):
-        while True:
+    def update_state(self, position):
+        pass
+
+    def take_turn(self):
+        try:
             x = int(input())
-            y = int(input())
-            if state[x][y] == 0:
-                state[x][y] = self.mark
-                break
-            print('Occupied')
+            return x
+        except:
+            return self.take_turn()
